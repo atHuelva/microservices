@@ -7,4 +7,4 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/hjmendez/spring-cloud-config.git #url del git dónde están alojados los ficheros de configuración      
+          uri: https://github.com/atHuelva/microservices-config.git #url del git dónde están alojados los ficheros de configuración      
