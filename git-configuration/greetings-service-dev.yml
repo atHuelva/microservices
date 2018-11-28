@@ -1,0 +1,13 @@
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://localhost:1111/eureka/
+#      defaultZone: http://10.21.88.108:1111/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 10.21.88.114
+ 
+# HTTP Server
+server:
+  port: 2222   # HTTP (Tomcat) ports
