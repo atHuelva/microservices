@@ -2,3 +2,6 @@ microservices-register/.classpath
 microservices-register/.project
 microservices-register/.settings/
 microservices-register/target/
+*.project
+*/.settings/
+*/target/*
