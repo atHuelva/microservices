@@ -19,7 +19,7 @@ eureka:
   
 # HTTP Server
 server:
-  port: 2223   # HTTP (Tomcat) port
+  port: 2222   # HTTP (Tomcat) port
   
 ribbon:
   eureka:
