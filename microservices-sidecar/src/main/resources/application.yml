@@ -1,0 +1,17 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: sidecar
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.21.88.108:1111/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    preferIpAddress: true
+    ipAddress: 10.21.88.114  
+sidecar:
+  port: 80
+  health-uri: http://localhost:80/health.php
