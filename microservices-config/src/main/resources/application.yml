@@ -1,10 +1,10 @@
 server:  
-  port: 8888
+  port: 8888 #puerto donde vamos a levantar nuestro servidor
 spring:  
   application:
-    name: configserver  
+    name: configserver  #nombre de la aplicación
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/hjmendez/spring-cloud-config.git
+          uri: https://github.com/hjmendez/spring-cloud-config.git #url del git dónde están alojados los ficheros de configuración      
