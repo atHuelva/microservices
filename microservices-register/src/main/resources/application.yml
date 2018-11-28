@@ -1,0 +1,10 @@
+# Configuracióm del servicio de registro
+eureka:
+  instance:
+    hostname: localhost # hostname de la instancia de eureka. En este caso y para las pruebas usaremos localhost
+  client:  # Eureka no es un cliente, no tiene que registrarse a si mismo
+    registerWithEureka: false
+    fetchRegistry: false    
+server:
+  port: 1111   # HTTP (Tomcat) puerto
+ 
