@@ -1,0 +1,27 @@
+# Spring properties
+spring:
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  thymeleaf:
+    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+    prefix: classpath:/templates/    # Trailing / mandatory
+                             # Template location for this application only
+ 
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: false    
+    leaseRenewalIntervalInSeconds: 5 
+    
+  
+# HTTP Server
+server:
+  port: 2222   # HTTP (Tomcat) port
+  
+ribbon:
+  eureka:
+    enabled: true
+    
