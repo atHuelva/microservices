@@ -1,0 +1,48 @@
+# Spring properties
+spring:
+  application:
+    name: greeting-client-service  # Identify this application
+  thymeleaf:
+    cache: false       # Allow Thymeleaf templates to be reloaded at runtime
+    prefix: classpath:/templates/    # Trailing / mandatory
+                       # Template location for this application onlyy
+ 
+# Map the error path to error template (for Thymeleaf)
+
+ 
+# Discovery Server Access
+eureka:
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 5
+ 
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# HTTP Server
+server:
+  port: 3333   # HTTP (Tomcat) port
+  error:
+    path: /error
+    
+##Security
+#security:
+#  oauth2:
+#    client:
+#      clientId: 0oahto57r7N9NEduk0h7
+#      clientSecret: m5lCanfzklw8A9uzqIGq3MJPC5S4g6JipL1DR-Kr  
+#      accessTokenUri: https://dev-683533.oktapreview.com/oauth2/default/v1/token
+#      userAuthorizationUri: https://dev-683533.oktapreview.com/oauth2/default/v1/authorize
+#      scope: openid profile email
+#    resource:
+#      userInfoUri: https://dev-683533.oktapreview.com/oauth2/default/v1/userinfo    
