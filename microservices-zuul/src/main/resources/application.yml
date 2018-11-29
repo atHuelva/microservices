@@ -1,0 +1,54 @@
+zuul:
+  ignoredServices: "*"
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    home:
+      path: /home
+      serviceId: GREETING-CLIENT-SERVICE
+      stripPrefix: false
+    greetings:
+      path: /greetings/**      
+      serviceId: GREETING-CLIENT-SERVICE
+      stripPrefix: false
+    greetingsPhp:
+      path: /greetingsPhp/**      
+      serviceId: GREETING-CLIENT-SERVICE
+      stripPrefix: false
+      
+      
+# Discovery Server Access
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+ 
+server:
+  port: 8080   # HTTP (Tomcat) port
+  
+execution:
+  isolation:
+    thread:
+      timeoutInMilliseconds: 3000 #This property sets the time in milliseconds after which the caller will observe a timeout and walk away from the command execution. Hystrix marks > the HystrixCommand as a TIMEOUT, and performs fallback logic.
+      
+      
+      
+#Security
+security:
+  oauth2:
+    client:
+      clientId: 0oahto57r7N9NEduk0h7
+      clientSecret: m5lCanfzklw8A9uzqIGq3MJPC5S4g6JipL1DR-Kr  
+      accessTokenUri: https://dev-683533.oktapreview.com/oauth2/default/v1/token
+      userAuthorizationUri: https://dev-683533.oktapreview.com/oauth2/default/v1/authorize
+      scope: openid profile email
+    resource:
+      userInfoUri: https://dev-683533.oktapreview.com/oauth2/default/v1/userinfo
+      
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  shareSecurityContext: true      
+      
