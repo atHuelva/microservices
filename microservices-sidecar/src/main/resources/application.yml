@@ -1,17 +1,18 @@
 server:
-  port: 9004
+  port: 5555
 spring:
   application:
     name: sidecar
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://10.21.88.108:1111/eureka
+      defaultZone: http://localhost:1111/eureka
     register-with-eureka: true
     fetch-registry: true
-  instance:
-    preferIpAddress: true
-    ipAddress: 10.21.88.114  
+#si hay problemas al trabajar con los hosts se puede forzar para que se use la ip
+#  instance:
+#    preferIpAddress: true 
+#    ipAddress: 10.21.88.115  
 sidecar:
   port: 80
   health-uri: http://localhost:80/health.php
